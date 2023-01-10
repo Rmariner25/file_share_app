@@ -1,0 +1,96 @@
+<div class="container-fluid">
+    
+	
+	<br>
+	<br>
+	
+	
+	<div class="col d-flex justify-content-center">
+	   
+	   <div class="card shadow k12 border-light text-white" style="width: 35rem;">
+       <div class="col-md-12">
+               <div class="card-body">
+			   <h5 class="card-header text-center">Upload Files here</h5>
+			   <div class="row">
+			   <div class="col-md-12 text-center">
+			   <img src="../../../assets/inupm5.png" class="img-fluid" style="width: 15rem;" alt="Upload File">
+			   </div>
+			   </div>
+			    
+			   <div class="progress mt-2 k12">
+                    <div class="progress-bar progress-bar-info"
+                        role="progressbar" attr.aria-valuenow="{{percentage}}"
+                        aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: percentage + '%' }">
+                        {{percentage}}%
+                    </div>
+                </div>
+				<br>
+			   
+                    <div class="row">
+                    <input type="file" class="text-nowrap text-truncate file" (change)="selectFile($event)">
+					</div>
+					<br>
+					<div class="row">
+					<div class="col-md-12 text-center">
+                    <button type="button" class="btn c1b1 text-white" [disabled] = "!selectedFiles" (click)="uploadFile()">Upload</button>
+					</div>
+                    </div>
+               </div>
+         
+
+
+        </div>
+		
+		</div>
+		</div>
+		<br>
+		<br>
+        <!-- display all files -->
+		<div class="col d-flex justify-content-center">
+		 <div class="card shadow n12 text-white" style="width: 75rem;">
+        <div class="card-body">
+
+            
+                <strong><h4 class="card-header text-white">Recent Uploads</h4></strong>
+          <br>
+            <div style="overflow-x:auto;">
+            <table class="table newp2 table-hover">
+                <thead>
+                  <tr>
+				    <th scope="col">&#35;</th>
+                    <th scope="col">File name</th>
+                    <th scope="col">File size</th>
+                    <th scope="col">Download</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let file of listOfFiles; index as i">
+				    <th>{{i+1}}.</th>
+                    <th>{{file.name}}</th>
+                    <td>{{file.size /1000}} KB</td>
+                    <td>
+                    <a href="{{file.url}}" class="btn btn-primary btn-sm"  title="Download File" type="button" download><i class="fa fa-download"></i></a>
+					</td>
+					<td>
+                    <a class="btn btn-danger btn-sm" title="Delete File" type="button" (click)="deleteFile(file)"><i class="fa fa-trash"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+</div>
+        </div>
+		</div>
+    </div>     
+		<br>
+<br>		
+			
+			
+			
+	</div>
+	
+	
+	
+	
+       
+        

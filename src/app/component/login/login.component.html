@@ -1,0 +1,55 @@
+<div class="container-fluid">
+       <br>
+	   <br>
+        <div class="col d-flex justify-content-center">
+            <div class="card shadow c1 text-white" style="width: 20rem;">
+                <div class="card-body">
+				<h4 class="card-title">Sign In</h4>
+				<small>Sign in to your account to continue</small>
+				<br>
+				<br>
+                    <form>
+                      
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email</label>
+                          <input type="email" class="form-control" placeholder="Your email" name="email" [(ngModel)]="email">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" name="password" placeholder="Your password" [(ngModel)]="password">
+                        </div>
+                       
+						<div class="row">
+							<div class="col-md-12 text-end">
+							<small><a href="/forgot-password" class="text-dark" style="text-decoration: none;"> Forgot Password?</a></small>
+                            </div>
+                        </div>
+						 <div class="row">
+                            <div class="col-md-6">
+							<button type="button" class="btn c1b1 text-white" (click)="login()">Login</button>
+                            </div>
+						</div>
+						
+						<br>
+                        <div class="row mt-2">
+                            <a (click)="signInWithGoogle()" style="text-decoration: none;cursor: pointer;">
+                                <div class="card shadow text-center">
+                                    <div class="card-body text-dark">
+                                        <img src="../../../assets/icons8-google-48.png" alt="" height="25px" width="25px">&nbsp;&nbsp;Sign In with Google
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+						<br>
+						<div class="row">
+						<div class="col-md-12 text-center">
+						<small>Not registered? <a href="/register">Sign up</a></small>
+						</div>
+						</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+   
+</div>
